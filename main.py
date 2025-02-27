@@ -7,16 +7,13 @@ import numpy as np
 import soundfile as sf
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, ClientSettings
 
-# Load models globally
 sentiment_pipeline = pipeline("sentiment-analysis", model="distilbert/distilbert-base-uncased-finetuned-sst-2-english")
 emotion_pipeline = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
 whisper_model = whisper.load_model("base")
 
-# Emoji mapping
 sentiment_emojis = {"POSITIVE": "😊", "NEGATIVE": "😞", "NEUTRAL": "😐"}
 emotion_emojis = {"joy": "😁", "anger": "😡", "sadness": "😢", "fear": "😨", "surprise": "😲", "love": "❤️", "neutral": "😐"}
 
-# Function to process audio
 def transcribe_audio(audio_file):
     try:
         result = whisper_model.transcribe(audio_file)
@@ -25,9 +22,9 @@ def transcribe_audio(audio_file):
         st.error(f"Transcription failed: {str(e)}")
         return ""
 
+
 st.title("Speech & Text Sentiment and Emotion Analysis")
 
-# Audio Upload & Recording
 st.header("Upload or Record Audio")
 
 audio_file = st.file_uploader("Upload an audio file", type=["wav", "mp3", "m4a"])
@@ -48,38 +45,24 @@ if audio_file:
         os.remove(temp_audio_path)
 
 st.subheader("Record Audio")
-webrtc_ctx = webrtc_streamer(
-    key="speech-record",
-    mode=WebRtcMode.SENDRECV,
-    client_settings=ClientSettings(
-        rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
-        media_stream_constraints={"video": False, "audio": True},
-    ),
-)
+audio_value = st.audio_input("Record a voice message")
 
-if webrtc_ctx.audio_receiver:
+if audio_value:
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_record:
+        temp_record.write(audio_value.read())
+        temp_record_path = temp_record.name
+    
     try:
-        audio_frames = webrtc_ctx.audio_receiver.get_frames(timeout=5)
-        if audio_frames:
-            audio = np.concatenate([frame.to_ndarray() for frame in audio_frames])
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
-                temp_audio_path = temp_audio.name
-                sf.write(temp_audio_path, audio, samplerate=16000)
-                
-                st.audio(temp_audio_path, format="audio/wav")
-                transcribed_text = transcribe_audio(temp_audio_path)
-                os.remove(temp_audio_path)
-        else:
-            st.warning("No audio frames captured. Try speaking longer.")
+        st.audio(temp_record_path, format=audio_value.type)
+        transcribed_text = transcribe_audio(temp_record_path)
     except Exception as e:
-        st.error(f"Error in recording: {str(e)}")
-else:
-    st.info("Awaiting microphone access...")
+        st.error(f"Error processing audio: {str(e)}")
+    finally:
+        os.remove(temp_record_path)
+    
 
-# Display Transcribed Text (Read-Only)
 st.text_area("Transcribed Text", transcribed_text, height=100, disabled=True)
 
-# Manual Text Input
 text_input = st.text_area("Enter text for analysis", transcribed_text, height=100)
 analyze_button = st.button("Analyze")
 
@@ -96,3 +79,4 @@ if analyze_button and text_input:
     
     st.subheader("Emotion Analysis")
     st.markdown(f"**Emotion:** {emotion_emojis.get(emotion, '😐')} ({emotion})")
+
