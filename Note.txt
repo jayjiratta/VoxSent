@@ -1,0 +1,10 @@
+Note
+
+How to install tensorflow (Guide from tensorflow web)
+
+conda create --name voxsent python=3.10
+conda activate voxsent
+
+conda install tensorflow==2.10.0 scikit-learn==1.3.0 numpy==1.24.3 streamlit transformers whisper
+conda install -c conda-forge ffmpeg
+
