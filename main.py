@@ -7,11 +7,9 @@ import numpy as np
 import soundfile as sf
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, ClientSettings
 
-sentiment_pipeline = pipeline("sentiment-analysis", model="distilbert/distilbert-base-uncased-finetuned-sst-2-english")
 emotion_pipeline = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
 whisper_model = whisper.load_model("base")
 
-sentiment_emojis = {"POSITIVE": "😊", "NEGATIVE": "😞", "NEUTRAL": "😐"}
 emotion_emojis = {"joy": "😁", "anger": "😡", "sadness": "😢", "fear": "😨", "surprise": "😲", "love": "❤️", "neutral": "😐"}
 
 def transcribe_audio(audio_file):
@@ -23,7 +21,7 @@ def transcribe_audio(audio_file):
         return ""
 
 
-st.title("Speech & Text Sentiment and Emotion Analysis")
+st.title("Speech & Text Emotion Analysis")
 
 st.header("Upload or Record Audio")
 
@@ -67,15 +65,10 @@ text_input = st.text_area("Enter text for analysis", transcribed_text, height=10
 analyze_button = st.button("Analyze")
 
 if analyze_button and text_input:
-    sentiment_result = sentiment_pipeline(text_input)[0]
-    sentiment = sentiment_result["label"].upper()
     
     emotion_result = emotion_pipeline(text_input)
     top_emotion = max(emotion_result, key=lambda x: x['score'])
     emotion = top_emotion["label"].lower()
-    
-    st.subheader("Sentiment Analysis")
-    st.markdown(f"**Sentiment:** {sentiment_emojis.get(sentiment, '😐')} ({sentiment})")
     
     st.subheader("Emotion Analysis")
     st.markdown(f"**Emotion:** {emotion_emojis.get(emotion, '😐')} ({emotion})")
