@@ -9,3 +9,7 @@ streamlit-webrtc
 datasets
 transformers
 keras
+nltk
+nlpaug
+sacremoses
+streamlit-authenticator
