@@ -4,12 +4,8 @@ scikit-learn==1.3.0
 numpy==1.24.3
 streamlit
 openai-whisper
-soundfile
-streamlit-webrtc
-datasets
 transformers
 keras
 nltk
 nlpaug
 sacremoses
-streamlit-authenticator

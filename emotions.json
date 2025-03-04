@@ -1,0 +1,114 @@
+{
+    "sadness": {
+        "emoji": "😢",
+        "text": "A feeling of sorrow or unhappiness."
+    },
+    "admiration": {
+        "emoji": "😍",
+        "text": "A feeling of respect and approval."
+    },
+    "neutral": {
+        "emoji": "😐",
+        "text": "A state of no particular emotion."
+    },
+    "love": {
+        "emoji": "❤️",
+        "text": "An intense feeling of deep affection."
+    },
+    "gratitude": {
+        "emoji": "🙏",
+        "text": "The quality of being thankful."
+    },
+    "disapproval": {
+        "emoji": "👎",
+        "text": "A feeling of dislike or disagreement."
+    },
+    "amusement": {
+        "emoji": "😆",
+        "text": "A feeling of entertainment and enjoyment."
+    },
+    "disappointment": {
+        "emoji": "😞",
+        "text": "A feeling of sadness when expectations are not met."
+    },
+    "realization": {
+        "emoji": "🤯",
+        "text": "A sudden awareness or understanding."
+    },
+    "annoyance": {
+        "emoji": "😠",
+        "text": "A feeling of being irritated or disturbed."
+    },
+    "confusion": {
+        "emoji": "😕",
+        "text": "A state of being uncertain or unclear."
+    },
+    "optimism": {
+        "emoji": "😊",
+        "text": "Hopefulness and confidence about the future."
+    },
+    "curiosity": {
+        "emoji": "🤔",
+        "text": "A strong desire to learn or know something."
+    },
+    "excitement": {
+        "emoji": "🤩",
+        "text": "A feeling of great enthusiasm and eagerness."
+    },
+    "caring": {
+        "emoji": "🤗",
+        "text": "Displaying kindness and concern for others."
+    },
+    "disgust": {
+        "emoji": "🤮",
+        "text": "A strong feeling of dislike or disapproval."
+    },
+    "remorse": {
+        "emoji": "😔",
+        "text": "A feeling of regret or guilt for past actions."
+    },
+    "joy": {
+        "emoji": "😁",
+        "text": "A feeling of great happiness and delight."
+    },
+    "approval": {
+        "emoji": "👍",
+        "text": "A positive opinion or agreement."
+    },
+    "embarrassment": {
+        "emoji": "😳",
+        "text": "A feeling of self-consciousness and awkwardness."
+    },
+    "surprise": {
+        "emoji": "😲",
+        "text": "A sudden unexpected reaction."
+    },
+    "anger": {
+        "emoji": "😡",
+        "text": "A strong feeling of displeasure or rage."
+    },
+    "grief": {
+        "emoji": "😭",
+        "text": "A deep sorrow, especially caused by loss."
+    },
+    "pride": {
+        "emoji": "😌",
+        "text": "A feeling of satisfaction in one’s achievements."
+    },
+    "desire": {
+        "emoji": "🔥",
+        "text": "A strong feeling of wanting something."
+    },
+    "relief": {
+        "emoji": "😅",
+        "text": "A feeling of reassurance and relaxation."
+    },
+    "fear": {
+        "emoji": "😨",
+        "text": "A distressing emotion caused by perceived danger."
+    },
+    "nervousness": {
+        "emoji": "😬",
+        "text": "A feeling of anxiety and unease."
+    }
+}
