@@ -45,22 +45,22 @@ streamlit run main.py
 
 ## Model Architecture
 ### 28-Emotion Model
-![28-Emotion Model-Model Architecture](models\version1\model_architecture.png)
+![28-Emotion Model-Model Architecture](models/version1/model_architecture.png)
 ### 7-Emotion Model
-![7-Emotion Model-Model Architecture](models\version2\model_architecture.png)
+![7-Emotion Model-Model Architecture](models/version2/model_architecture.png)
 
 ## Results
 ### Training History
 #### 28-Emotion Model
-![28-Emotion Model-Training History](models\version1\training_history.png)
+![28-Emotion Model-Training History](models/version1/training_history.png)
 #### 7-Emotion Model
-![7-Emotion Model-Training History](models\version2\training_history.png)
+![7-Emotion Model-Training History](models/version2/training_history.png)
 
 ### Confusion Matrix
 #### 28-Emotion Model
-![28-Emotion Model-Confusion Matrix](models\version1\confusion_matrix.png)
+![28-Emotion Model-Confusion Matrix](models/version1/confusion_matrix.png)
 #### 7-Emotion Model
-![7-Emotion Model-Confusion Matrix](models\version2\confusion_matrix.png)
+![7-Emotion Model-Confusion Matrix](models/version2/confusion_matrix.png)
 
 ### Classification Report
 #### 28-Emotion Model
@@ -97,7 +97,8 @@ streamlit run main.py
 | accuracy     |           |        | 0.40     | 42245   |
 | macro avg    | 0.30      | 0.23   | 0.23     | 42245   |
 | weighted avg | 0.37      | 0.40   | 0.33     | 42245   |
-![28-Emotion Model-Classification Report](models\version1\classification_report.txt)
+
+![28-Emotion Model-Classification Report](models/version1/classification_report.txt)
 #### 7-Emotion Model
 | class        | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
@@ -111,4 +112,5 @@ streamlit run main.py
 | accuracy     |           |        | 0.59     | 35910   |
 | macro avg    | 0.59      | 0.59   | 0.59     | 35910   |
 | weighted avg | 0.59      | 0.59   | 0.59     | 35910   |
-![7-Emotion Model-Classification Report](models\version2\classification_report.txt)
+
+![7-Emotion Model-Classification Report](models/version2/classification_report.txt)
