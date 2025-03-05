@@ -155,5 +155,26 @@ if(app_mode=="Home"):
 
 elif(app_mode=="About Project"):
     st.markdown("""
-                ### About Project
-                """)
+### About Project
+
+This project is an advanced **Speech & Text Emotion Analysis** system built using **Streamlit**, **TensorFlow**, and **Whisper**. It processes both audio and text inputs, transcribes speech into text, and analyzes emotions using deep learning models.
+
+#### Dataset and Model Training
+- **Speech-to-Text (STT) Model:** Uses OpenAI's **Whisper** for speech transcription.
+- **Emotion Models:** Supports two versions:
+  - **28-Emotion Model** for detailed analysis.
+  - **7-Emotion Model** for generalized classification.
+- **Training Process:**
+  - Preprocessed text data using tokenization and padding.
+  - LSTM-based deep learning models trained on large emotion-labeled datasets.
+  - Optimized using cross-entropy loss and Adam optimizer.
+
+#### Features
+- 🎤 **Speech-to-Text Processing** using Whisper.
+- 📊 **Emotion Classification** from text or speech.
+- 🔄 **Multiple Models:** Switch between 28-emotion and 7-emotion models.
+- 🎙️ **Real-Time Audio Input** for instant analysis.
+- 🚀 **User-Friendly Interface** built with Streamlit.
+
+This project aims to integrate **multimodal emotion recognition**, making it useful for applications in research, AI interactions, and customer service.
+""")
