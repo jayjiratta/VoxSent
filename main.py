@@ -157,7 +157,7 @@ elif(app_mode=="About Project"):
     st.markdown("""
 ### About Project
 
-This project is an advanced **Speech & Text Emotion Analysis** system built using **Streamlit**, **TensorFlow**, and **Whisper**. It processes both audio and text inputs, transcribes speech into text, and analyzes emotions using deep learning models.
+This project is a **Speech & Text Emotion Analysis** system built using **Streamlit**, **TensorFlow**, and **Whisper**. It processes both audio and text inputs, transcribes speech into text, and analyzes emotions using deep learning models.
 
 #### Dataset and Model Training
 - **Speech-to-Text (STT) Model:** Uses OpenAI's **Whisper** for speech transcription.
