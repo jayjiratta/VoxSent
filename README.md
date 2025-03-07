@@ -1,7 +1,7 @@
 # VoxSent
 ## Description
 
-This project implements an Emotion Analysis System that utilizes deep learning models trained on the GoEmotions dataset. The project includes two versions of emotion classification
+This project implements an Emotion Analysis System that utilizes models trained on the GoEmotions dataset. The project includes two versions of emotion classification
 - 28-Emotion Model: Predicts one of 28 emotions (with a neutral class included).
 - 7-Emotion Model: Predicts one of 7 primary emotions (anger, disgust, neutral, surprise, joy, sadness, fear).
 
