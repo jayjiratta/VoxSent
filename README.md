@@ -114,3 +114,6 @@ streamlit run main.py
 | weighted avg | 0.59      | 0.59   | 0.59     | 35910   |
 
 ![7-Emotion Model-Classification Report](models/version2/classification_report.txt)
+
+### Web Application
+![Image](https://github.com/user-attachments/assets/8bccfb82-274a-402e-9c90-c0736d8db4e9)
