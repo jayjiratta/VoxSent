@@ -117,3 +117,4 @@ streamlit run main.py
 
 ### Web Application
 ![Image](https://github.com/user-attachments/assets/8bccfb82-274a-402e-9c90-c0736d8db4e9)
+![Image](https://github.com/user-attachments/assets/41826410-02be-4615-99ff-90362e7ef014)
